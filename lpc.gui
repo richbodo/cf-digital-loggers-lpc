@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gui>
+  <properties>
+    <project>lpc</project>
+    <designer>
+    </designer>
+    <size autoposition="scale">
+      <portrait width="320" height="568" />
+      <landscape width="568" height="320" />
+    </size>
+    <autoposition />
+    <imagefolder>
+    </imagefolder>
+    <debug loaderrors="0" connectionerrors="0" />
+    <devices>
+      <device name="Huawei U8660">1926AD9623473CFEE8D0EAE760CDB331</device>
+    </devices>
+  </properties>
+  <themes>
+    <theme type="button" name=".btn_blue_sq_lrg[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(btn_colors\btn_blue_sq_lrg_off.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".btn_blue_sq_lrg[state='1']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(btn_colors\btn_blue_sq_lrg_on.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+  </themes>
+  <scripts>
+    <script name="scripts/base64.js" />
+    <script name="scripts/convertBase.js" />
+    <script name="scripts/lpc.js" />
+    <script name="scripts/gui.js" />
+  </scripts>
+  <page name="Startup" j="0" transition="" subtype="" time="0" ease="">
+    <portrait>
+      <btn j="1" x="12" y="18" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">1</inactive>
+        <active s="0">1</active>
+      </btn>
+      <btn j="2" x="114" y="20" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">2</inactive>
+        <active s="0">2</active>
+      </btn>
+      <btn j="3" x="220" y="20" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">3</inactive>
+        <active s="0">3</active>
+      </btn>
+      <btn j="4" x="12" y="118" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">4</inactive>
+        <active s="0">4</active>
+      </btn>
+      <btn j="5" x="114" y="120" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">5</inactive>
+        <active s="0">5</active>
+      </btn>
+      <btn j="6" x="220" y="120" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">6</inactive>
+        <active s="0">6</active>
+      </btn>
+      <btn j="7" x="13" y="221" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">7</inactive>
+        <active s="0">7</active>
+      </btn>
+      <btn j="8" x="115" y="223" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+        <inactive s="0">8</inactive>
+        <active s="0">8</active>
+      </btn>
+      <btn j="0" x="14" y="350" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="1" l="0" s="1" js="GUI.lpcDemo.switchOutletByNumber(4, 'ON')">
+        <inactive s="0">4
+ON</inactive>
+        <active s="0">4
+ON</active>
+      </btn>
+    </portrait>
+    <landscape />
+  </page>
+</gui>
