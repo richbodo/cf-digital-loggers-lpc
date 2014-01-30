@@ -1,7 +1,7 @@
 Description
 ======================
 
-This module was written when i received request for non commercial work
+This module was written when i received request for non commercial work.
 Here is my ad: https://groups.google.com/forum/#!topic/commandfusion/IC1oX51V_kw
 
 The device is this: 
