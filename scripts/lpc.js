@@ -27,7 +27,6 @@ var lpc = function(parameters) {
     	login: '',
     	password: '',
     	updateInterval: 0,
-    	_joinChangedFromGUI: false,
     	joins: {},
         _lastState: '',
     };
@@ -45,12 +44,7 @@ var lpc = function(parameters) {
     	'Accept' : '*/*'
     };
     module.startup = function(){
-
     	CF.log('LPC Startup');
-    	// watch joins change
-    	for (var outlet in module.joins) {
-    		CF.watch(CF.JoinChangeEvent, module.joins[outlet], module.switchOutletByJoin);
-    	}
     	// ask status
     	CF.request('http://' + module.host + module.port + '/index.htm', module.headers,
             function(status, headers, body) {
@@ -78,33 +72,7 @@ var lpc = function(parameters) {
                 }
         }); 
     };
-    module.switchOutletByJoin = function(join, value, tokens, tags) {
-    	if(module._joinChangedFromGUI == true) {
-	    	CF.log('Join #' + join + " switched from GUI to " + value);
-    		var valueStr = '';
-	    	if (value == 1) {
-    			valueStr = 'ON';
-    		} else {
-	    		valueStr = 'OFF';
-    		}
-    		for (var outlet in module.joins) {
-	    		if(module.joins[outlet] == join) {
-    				CF.request('http://' + module.host + module.port + '/outlet?' + outlet + '=' + valueStr, module.headers,
-        	    		function(status, headers, body) {
-        		       		if (status == 200) {
-    	        	   	   		CF.log('http://' + module.host + module.port + '/outlet?' + outlet + '=' + valueStr);
-                                module._joinChangedFromGUI = false;
-               				} else {
-                                CF.log("LPC switch outlet failed with status " + status);
-                                module.switchOutletByJoin(join, value, tokens, tags);
-                            }
-        	    	});
-                    break;
-    			}
-    		}
-    		
-    	}
-    };
+
     module._parseLpcState = function(body) {
     	CF.log('Parsing response');
     	//CF.log(body);
@@ -119,11 +87,8 @@ var lpc = function(parameters) {
 				CF.log('State of outlets [8-1]: ' + stateBin);
 				for(var i = stateBin.length - 1; i >= 0; i -= 1) {
 					var outlet = stateBin.length - i;
-
-					if (CF.getJoin(module.joins[outlet.toString()]) != parseInt(stateBin[i]) && module._joinChangedFromGUI != true) {
 						CF.setJoin(module.joins[outlet.toString()], parseInt(stateBin[i]));
                         CF.log('Join changed by update: ' + module.joins[outlet.toString()] + ':' + parseInt(stateBin[i]));
-					}
 				}
 			}
 		}
@@ -144,16 +109,33 @@ var lpc = function(parameters) {
                }
             });
     };
-    module.click = function() {
-    	module._joinChangedFromGUI = true;
+    module.switchOutlet = function(join, tokens) {
+            CF.getJoin(join, function (j, value) {
+                module._tmpValue = value;
+            });
+            CF.log('Join #' + join + " switched from GUI to " + module._tmpValue );
+            var valueStr = '';
+            if (module._tmpValue == 1) {
+                valueStr = 'ON';
+            } else {
+                valueStr = 'OFF'; 
+            } 
+            for (var outlet in module.joins) {
+                if(module.joins[outlet] == join) {
+                    CF.request('http://' + module.host + module.port + '/outlet?' + outlet + '=' + valueStr, module.headers,
+                        function(status, headers, body) {
+                            if (status == 200) {
+                                CF.log('http://' + module.host + module.port + '/outlet?' + outlet + '=' + valueStr);
+                            } else {
+                                CF.log("LPC switch outlet failed with status " + status);
+                            }
+                    });
+                    break;
+                }
+            }
     };
     module.cleanup = function() {
-
     	CF.log('LPC Cleanup');
-    	// unwatch all events
-    	for (var outlet in module.joins) {
-    		CF.unwatch(CF.JoinChangeEvent, module.joins[outlet]);
-    	}
     };
 
     return module;

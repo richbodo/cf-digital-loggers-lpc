@@ -27,35 +27,35 @@
   </scripts>
   <page name="Startup" j="0" transition="" subtype="" time="0" ease="">
     <portrait>
-      <btn j="1" x="12" y="18" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="1" x="12" y="18" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">1</inactive>
         <active s="0">1</active>
       </btn>
-      <btn j="2" x="114" y="20" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="2" x="114" y="20" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">2</inactive>
         <active s="0">2</active>
       </btn>
-      <btn j="3" x="220" y="20" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="3" x="220" y="20" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">3</inactive>
         <active s="0">3</active>
       </btn>
-      <btn j="4" x="12" y="118" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="4" x="12" y="118" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">4</inactive>
         <active s="0">4</active>
       </btn>
-      <btn j="5" x="114" y="120" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="5" x="114" y="120" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">5</inactive>
         <active s="0">5</active>
       </btn>
-      <btn j="6" x="220" y="120" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="6" x="220" y="120" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">6</inactive>
         <active s="0">6</active>
       </btn>
-      <btn j="7" x="13" y="221" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="7" x="13" y="221" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">7</inactive>
         <active s="0">7</active>
       </btn>
-      <btn j="8" x="115" y="223" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.click()">
+      <btn j="8" x="115" y="223" w="84" h="84" t="btn_blue_sq_lrg" flip="None" sim="2" l="0" s="1" js="GUI.lpcDemo.switchOutlet(join, tokens)">
         <inactive s="0">8</inactive>
         <active s="0">8</active>
       </btn>
